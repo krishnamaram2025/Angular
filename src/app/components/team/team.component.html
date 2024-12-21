@@ -1,0 +1,49 @@
+<div class="teams">
+  <h2>Manage Teams</h2>
+  
+  <!-- Form -->
+  <form (submit)="onSubmit()">
+    <div>
+      <label>Team Name:</label>
+      <input [(ngModel)]="team.team_name" name="team_name" required />
+    </div>
+    <div>
+      <label>Member 1:</label>
+      <input [(ngModel)]="team.member1" name="member1" required />
+    </div>
+    <div>
+      <label>Member 2:</label>
+      <input [(ngModel)]="team.member2" name="member2" required />
+    </div>
+    <div>
+      <label>Member 3:</label>
+      <input [(ngModel)]="team.member3" name="member3" required />
+    </div>
+    <button type="submit">Save</button>
+  </form>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Member 1</th>
+        <th>Member 2</th>
+        <th>Member 3</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams; let i = index">
+        <td>{{ team.team_name }}</td>
+        <td>{{ team.member1 }}</td>
+        <td>{{ team.member2 }}</td>
+        <td>{{ team.member3 }}</td>
+        <td>
+          <button (click)="editTeam(i)">Edit</button>
+          <button (click)="deleteTeam(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

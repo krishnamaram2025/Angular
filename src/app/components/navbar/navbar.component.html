@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	<h1 class="example-app-name">Hackathon</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+		(mouseleave)="mouseleave()">
+		<mat-nav-list style="padding: 5px; margin: 5px;" routerLink="/home">
+			<span class="full-width" *ngIf="isExpanded || isShowing">Home</span>
+			<mat-icon mat-list-icon>home</mat-icon>
+		</mat-nav-list>
+		<mat-nav-list style="padding: 5px; margin: 5px;" routerLink="/team">
+			<span class="full-width" *ngIf="isExpanded || isShowing">Team</span>
+			<mat-icon mat-list-icon>groups</mat-icon>
+		</mat-nav-list>
+	</mat-sidenav>
+
+	<div class="example-sidenav-content">
+		<router-outlet></router-outlet>
+	</div>
+
+</mat-sidenav-container>

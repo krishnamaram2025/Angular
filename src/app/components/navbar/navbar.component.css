@@ -1,0 +1,19 @@
+.example-container {
+  height: 95vh;
+}
+.example-sidenav-content {
+  display: flex;
+
+}
+.example-sidenav {
+   user-select: none;
+}
+.full-width {
+  width: 100%;
+}
+mat-toolbar{
+  background-color: blueviolet;
+}
+
+
+
