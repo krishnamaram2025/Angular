@@ -1,0 +1,37 @@
+<div class="skills">
+  <h2>Manage skills</h2>
+  
+  <!-- Form -->
+  <form (submit)="onSubmit()">
+    <div>
+      <label>skill Name:</label>
+      <input [(ngModel)]="skill.skill_name" name="skill_name" required />
+    </div>
+    <div>
+      <label>Stream Name:</label>
+      <input [(ngModel)]="skill.stream_name" name="stream_name" required />
+    </div>
+    <button type="submit">Save</button>
+  </form>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Skill Name</th>
+        <th>Stream Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of skills; let i = index">
+        <td>{{ skill.skill_name }}</td>
+        <td>{{ skill.stream_name }}</td>
+        <td>
+          <button (click)="editSkill(i)">Edit</button>
+          <button (click)="deleteSkill(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

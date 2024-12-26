@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="example-toolbar">
 	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-	<h1 class="example-app-name">Hackathon</h1>
+	<h1 class="example-app-name">portfolio</h1>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
@@ -9,8 +9,8 @@
 			<span class="full-width" *ngIf="isExpanded || isShowing">Home</span>
 			<mat-icon mat-list-icon>home</mat-icon>
 		</mat-nav-list>
-		<mat-nav-list style="padding: 5px; margin: 5px;" routerLink="/team">
-			<span class="full-width" *ngIf="isExpanded || isShowing">Team</span>
+		<mat-nav-list style="padding: 5px; margin: 5px;" routerLink="/skills">
+			<span class="full-width" *ngIf="isExpanded || isShowing">Skills</span>
 			<mat-icon mat-list-icon>groups</mat-icon>
 		</mat-nav-list>
 	</mat-sidenav>

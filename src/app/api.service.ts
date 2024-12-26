@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-interface Team {
-  team_name: string;
+interface skill {
+  skill_name: string;
   member1: string;
   member2: string;
   member3: string;
@@ -13,34 +13,34 @@ interface Team {
 })
 export class ApiService {
 
-  private apiUrl = 'http://127.0.0.1:8000/hackathon/api'; // Backend endpoint
+  private apiUrl = 'http://127.0.0.1:8000/portfolio/api'; // Backend endpoint
   constructor(private http: HttpClient) {}
 
-  // Get all teams
-  getTeams(): Observable<Team[]> {
-    return this.http.get<Team[]>(`${this.apiUrl}/teams`);
+  // Get all skills
+  getSkills(): Observable<skill[]> {
+    return this.http.get<skill[]>(`${this.apiUrl}/skills`);
   }
 
-  // Get a specific team by name
-  getTeam(teamName: string): Observable<Team> {
-    return this.http.get<Team>(`${this.apiUrl}/teams/${teamName}`);
+  // Get a specific skill by name
+  getSkill(skillName: string): Observable<skill> {
+    return this.http.get<skill>(`${this.apiUrl}/skills/${skillName}`);
   }
 
-  // Create a new team
-  createTeam(team: Team): Observable<Team> {
-    return this.http.post<Team>(`${this.apiUrl}/team/create`, team); // Updated URL for create
+  // Create a new skill
+  createSkill(skill: skill): Observable<skill> {
+    return this.http.post<skill>(`${this.apiUrl}/skill/create`, skill); // Updated URL for create
   }
 
-  // Update an existing team
-  updateTeam(team: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/team/update`, team);
+  // Update an existing skill
+  updateSkill(skill: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/skill/update`, skill);
   }
 
-  // Delete a team by name
-  deleteTeam(teamName: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/team/delete`, {
+  // Delete a skill by name
+  deleteSkill(skillName: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/skill/delete`, {
       headers: { 'Content-Type': 'application/json' },
-      body: { team_name: teamName } // Properly formatted payload
+      body: { skill_name: skillName } // Properly formatted payload
     });
   }
 }
