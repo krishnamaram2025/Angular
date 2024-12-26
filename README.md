@@ -7,14 +7,13 @@ Database: portfolio
 
 Table: skills
 
-Fields: skill_name, member1, member2, member3
+Fields: skill_name, stream_name
 
 Example Table 
 ```
-CREATE TABLE portfolio.skills(
-	skill_name VARCHAR(25) PRIMARY KEY,
-	member1 VARCHAR(25),
-	member2 VARCHAR(25),
-	member3 VARCHAR(25)
-	);
+CREATE TABLE portfolio.skills (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    skill_name VARCHAR(25),
+    stream_name VARCHAR(25)
+);
 ```
